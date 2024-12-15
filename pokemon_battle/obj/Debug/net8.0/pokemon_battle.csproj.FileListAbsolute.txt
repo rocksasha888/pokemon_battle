@@ -1,0 +1,14 @@
+c:\Users\AlexanderValyaev\Desktop\pokemon_battle\obj\Debug\net8.0\pokemon_battle.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\AlexanderValyaev\Desktop\pokemon_battle\obj\Debug\net8.0\pokemon_battle.AssemblyInfoInputs.cache
+c:\Users\AlexanderValyaev\Desktop\pokemon_battle\obj\Debug\net8.0\pokemon_battle.AssemblyInfo.cs
+c:\Users\AlexanderValyaev\Desktop\pokemon_battle\obj\Debug\net8.0\pokemon_battle.csproj.CoreCompileInputs.cache
+c:\Users\AlexanderValyaev\Desktop\pokemon_battle\bin\Debug\net8.0\pokemon_battle.exe
+C:\Users\AlexanderValyaev\Desktop\pokemon_battle\bin\Debug\net8.0\pokemon_battle.deps.json
+C:\Users\AlexanderValyaev\Desktop\pokemon_battle\bin\Debug\net8.0\pokemon_battle.runtimeconfig.json
+c:\Users\AlexanderValyaev\Desktop\pokemon_battle\bin\Debug\net8.0\pokemon_battle.dll
+c:\Users\AlexanderValyaev\Desktop\pokemon_battle\bin\Debug\net8.0\pokemon_battle.pdb
+c:\Users\AlexanderValyaev\Desktop\pokemon_battle\obj\Debug\net8.0\pokemon_battle.dll
+c:\Users\AlexanderValyaev\Desktop\pokemon_battle\obj\Debug\net8.0\refint\pokemon_battle.dll
+c:\Users\AlexanderValyaev\Desktop\pokemon_battle\obj\Debug\net8.0\pokemon_battle.pdb
+C:\Users\AlexanderValyaev\Desktop\pokemon_battle\obj\Debug\net8.0\pokemon_battle.genruntimeconfig.cache
+C:\Users\AlexanderValyaev\Desktop\pokemon_battle\obj\Debug\net8.0\ref\pokemon_battle.dll
