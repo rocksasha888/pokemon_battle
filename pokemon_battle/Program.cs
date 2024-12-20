@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.Threading;
 
 public class HelloWorld
 {
+    //static string[] pokemons = { "Bulbasaur", "Charmander", "Squirtle", "Pikachu", "Jigglypuff", "Meowth", "Psyduck", "Machop", "Geodude", "Slowpoke", "Gastly", "Onix", "Cubone", "Rhyhorn", "Magikarp", "Eevee", "Snorlax", "Dratini", "Mewtwo", "Chikorita" }; //the library that contains the array
 static string[,] pokemons = {
     {"Bulbasaur", "0"}, 
     {"Charmander", "1"}, 
@@ -93,7 +94,7 @@ static string[,] attacks = {
                 break;
             case 2:
                 Console.Clear();
-                string[,] newPok = new string[0, 0];
+                string[,] newPok = new string[1, 2];
                 do
                 {
                     LoadScreen();
@@ -103,11 +104,20 @@ static string[,] attacks = {
                         for (int k = 0; k < 1; k++)
                         {
                             int rndIndex = rnd.Next(0, pokemons.Length);
-                            newPok[k, k] = pokemons[rndIndex, 0];
+                            newPok[0, 0] = pokemons[rndIndex, 0];
+                            newPok[0, 1] = pokemons[rndIndex, 1]; //*********
+
                         }
 
                         Console.WriteLine("=====================================");
-                        Console.WriteLine("You search: " + string.Join(", ", newPok));
+                        if (newPok[0, 1] == "1")
+                        {
+                        Console.WriteLine("You search: " + newPok[0, 0] + " (Shiny)");
+                        }
+                        else
+                        {
+                        Console.WriteLine("You search: " + newPok[0, 0] + " (Regular)");
+                        }
                         Console.WriteLine("\n=====================================");
                         Console.WriteLine("             0. I want collect it");
                         Console.WriteLine("=====================================");
@@ -131,18 +141,16 @@ static string[,] attacks = {
                                 Console.Write("         Select a character\n");
                                 op = user_op();
                                 string player;
-                                if (op == 0)
-                                {
+                                if (op == 0){
                                     player = "Ash";
                                 }
-                                else
-                                {
+                                else{
                                     player = "Gary";
                                 }
                                 Console.Clear();
                                 deletePok(player, op);
                                 Console.Clear();
-                                addPokemon(newPok[0, 0]);
+                                addPokemon(newPok);
                                 Console.Clear();
                                 if(player == "Ash"){
                                     Console.WriteLine("Updated team:");
@@ -152,7 +160,6 @@ static string[,] attacks = {
                                     Console.WriteLine(string.Join(", ", pokGary)); 
                                 }
                                 break;
-
                             case 2:
                                 menu();
                                 break;
@@ -223,7 +230,8 @@ static string[,] attacks = {
         }
         Console.WriteLine("Select a number to delete:");
         op = user_op() - 1;
-        pokAsh[op, op] = null;
+        pokAsh[op, 0] = null;
+        pokAsh[op, 1] = null;
         break;
     case "Gary":
         index = 1;
@@ -234,26 +242,31 @@ static string[,] attacks = {
         }
         Console.WriteLine("Select a number to delete:");
         op = user_op() - 1;
-        pokGary[op, op] = null;
+        pokGary[op, 0] = null;
+        pokAsh[op, 1] = null;
         break;
     }
     
 }
 
-    static void addPokemon(string newPok) //Check all positions in the character array until a null is found and replace it
+    static void addPokemon(string[,] newPok) //Check all positions in the character array until a null is found and replace it
     {
         for (int i = 0; i < pokAsh.Length; i++)
         {
-            if (pokAsh[i, i] == null)
+            if (pokAsh[i, 0] == null || pokAsh[i, 1] == null)
             {
-                pokAsh[i, i] = newPok;
+                pokAsh[i, 0] = newPok[0, 0];
+                pokAsh[i, 1] = newPok[0,1];
+
             }
         }
         for (int o = 0; o < pokGary.Length; o++)
         {
-            if (pokGary[o, o] == null)
+            if (pokGary[o, 0] == null || pokGary[o, 1] == null )
             {
-                pokGary[o, o] = newPok;
+                pokGary[o, 0] = newPok[0, 0];
+                pokGary[o, 1] = newPok[0,1];
+
             }
         }
     }
@@ -287,13 +300,13 @@ static string[,] attacks = {
         for (int i = 0; i < 5; i++)
         {
             rndIndex = rnd.Next(pokemons.Length);
-            pokAsh[i, i] = pokemons[rndIndex, rndIndex];
+            pokAsh[i, 0] = pokemons[rndIndex, rndIndex];
         }
 
         for (int p = 0; p < 5; p++)
         {
             rndIndex = rnd.Next(pokemons.Length);
-            pokGary[p, p] = pokemons[rndIndex, rndIndex];
+            pokGary[p, 0] = pokemons[rndIndex, rndIndex];
         }
     }
 
